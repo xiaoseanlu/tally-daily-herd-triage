@@ -1,14 +1,23 @@
-# TALLY — Daily Herd Triage Case Study
+# TALLY — Daily Herd Triage
 
-A 26-screen mobile app design for a rancher's daily cattle triage workflow, built with Claude AI design tools over three days.
+**Live case study:** [xiaoseanlu.github.io/tally-daily-herd-triage](https://xiaoseanlu.github.io/tally-daily-herd-triage/)
+
+A mobile app design for a cattle rancher's daily herd triage — which animals need attention today, why, and how confident the system is. Eighteen interactive screens, built with Claude AI design tools over three days.
+
+## Overview
+
+A rancher running a few hundred head of cattle spends hours every week answering one question: which animals need attention today. The data to answer it better already exists — smart ear tags, weigh stations, feed-bunk records — but nobody has time to look at it, and the signals that matter (eating less, moving less, separating from the herd) usually surface too late.
+
+TALLY is the daily experience that turns that data into a decision. Every morning it reads the whole herd overnight and hands the rancher a short, ranked list: what needs a look, why, and how sure the system is — checkable one-handed, in under thirty seconds, with or without signal. The design problem underneath it wasn't the interface, it was trust: how a field tool earns the confidence of someone who's been reading these animals by eye for decades, and how it stays honest about being wrong.
+
+The case study is built around one persona, Dale Brenner — a composite grounded in real USDA demographic and connectivity data, disclosed as such in the appendix — and reasons every design decision back to either his actual day or a cited piece of field research, rather than a generic mobile-app pattern.
 
 ## What this is
 
-A complete design artifact showing:
-- **Design page**: Interactive 26-screen prototype of the TALLY app — a system that alerts a rancher to which animals need his attention today, why, and how confident the system is.
-- **Process Log page**: Detailed breakdown of how the design was built, including tools used, decisions made, dead ends, and the AI/human boundary as implemented.
+A complete design artifact with two views, toggled from the top-right of the page:
 
-Toggle between pages with the **Design** / **Process Log** buttons in the top-right.
+- **Design** — the interactive 18-screen prototype: Overview, To Do, Pastures, Animal Details, and the on-device notification layer, plus three appendices covering the design system, the research it was reasoned from, and full sourcing.
+- **Process Log** — how it was actually built: three AI tools over three days, the decisions and why, the dead ends kept in rather than cleaned up, and the AI/human boundary as implemented.
 
 ## Tech stack
 
@@ -33,19 +42,14 @@ The design system is loaded from `_ds/industry-*/styles.css` and `_ds/industry-*
 
 ## Process & decisions
 
-See `PROCESS.md` for:
-- Tools used (Claude Design, Cursor, Figma)
-- Three-day timeline and what happened when
-- Design decisions and rationale
-- Dead ends worth knowing about
-- How the AI/human boundary was managed
+The fullest version of this lives on the live site's **Process Log** page — three tools, three days, the decisions and why, and the dead ends kept in rather than cleaned up. `PROCESS.md` in this repo covers the same ground for anyone browsing the code directly.
 
 ## Key design constraints
 
-- **No false precision**: The system reports what it saw, when, and what it compared against — then stops talking
-- **One feedback loop**: The rancher corrects the system in four words, and that answer updates the baseline
-- **Coverage > memory**: The bottleneck isn't judgment; it's that one person can't be in three places or remember Tuesday's readings on Thursday
-- **Quiet > pretty**: Everything refused (ring charts, health indices, color ramps) would have made a better screenshot but would make the rancher stop opening it
+- **No false precision** — the system reports what it saw, when, and what it compared against, then stops talking
+- **One feedback loop** — the rancher corrects the system in a few words, and that answer updates the baseline
+- **Coverage > memory** — the bottleneck isn't judgment, it's that one person can't be in three places or remember Tuesday's readings on Thursday
+- **Quiet > pretty** — everything refused (ring charts, health indices, color ramps) would have made a better screenshot but would make the rancher stop opening it
 
 ## To extend
 
